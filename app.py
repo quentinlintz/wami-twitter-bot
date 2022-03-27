@@ -78,7 +78,7 @@ tweet = '🎉 #WAMI STATS FOR ' + str(json_data['date']) + ' 🎉\n' \
 + 'The answer was #' + json_data['answer'].upper() + '!\n' \
 + str(total_players) + ' people played WAMI yesterday\n' \
 + str(victory_percent) + '% got the answer correct!\n' \
-+ '     ' + '🟩'* victory_emoji_count + '🟥' * game_over_emoji_count + '\n'
++ '🟩'* victory_emoji_count + '🟥' * game_over_emoji_count + '\n'
 
 client = tweepy.Client(bearer_token=BEARER_TOKEN, consumer_key=CONSUMER_KEY, consumer_secret=CONSUMER_SECRET, access_token=ACCESS_TOKEN, access_token_secret=ACCESS_TOKEN_SECRET)
 response = client.create_tweet(text=tweet)
