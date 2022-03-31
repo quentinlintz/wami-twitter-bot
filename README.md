@@ -23,3 +23,9 @@ To run the script:
 ```bash
 python3 app.py
 ```
+
+## Deployment
+
+This bot is deployed on Heroku. The worker is disabled. Instead, a Heroku Scheduler is used to schedule daily runs of this script.
+
+[heroku-google-application-credentials-buildpack](https://github.com/gerywahyunugraha/heroku-google-application-credentials-buildpack) should be installed to populate the key.json on Heroku.
