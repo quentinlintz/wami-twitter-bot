@@ -45,7 +45,7 @@ request = RunReportRequest(
         )
     ),
     metrics=[Metric(name="activeUsers")],
-    date_ranges=[DateRange(start_date="2daysAgo", end_date="1daysAgo")],
+    date_ranges=[DateRange(start_date="yesterday", end_date="today")],
     limit=100000,
     offset=0,
 )
@@ -80,5 +80,8 @@ tweet = '🎉 #WAMI STATS FOR ' + str(json_data['date']) + ' 🎉\n' \
 + str(victory_percent) + '% got the answer correct!\n' \
 + '🟩'* victory_emoji_count + '🟥' * game_over_emoji_count + '\n'
 
-client = tweepy.Client(bearer_token=BEARER_TOKEN, consumer_key=CONSUMER_KEY, consumer_secret=CONSUMER_SECRET, access_token=ACCESS_TOKEN, access_token_secret=ACCESS_TOKEN_SECRET)
-response = client.create_tweet(text=tweet)
+if DEBUG:
+    print(tweet)
+else:
+    client = tweepy.Client(bearer_token=BEARER_TOKEN, consumer_key=CONSUMER_KEY, consumer_secret=CONSUMER_SECRET, access_token=ACCESS_TOKEN, access_token_secret=ACCESS_TOKEN_SECRET)
+    response = client.create_tweet(text=tweet)
