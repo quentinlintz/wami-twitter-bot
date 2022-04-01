@@ -45,7 +45,7 @@ request = RunReportRequest(
         )
     ),
     metrics=[Metric(name="activeUsers")],
-    date_ranges=[DateRange(start_date="yesterday", end_date="today")],
+    date_ranges=[DateRange(start_date="2daysAgo", end_date="1daysAgo")],
     limit=100000,
     offset=0,
 )
